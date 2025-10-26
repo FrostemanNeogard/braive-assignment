@@ -1,7 +1,6 @@
 package com.frostemanneogard.braive.organizations;
 
 import com.frostemanneogard.braive.base.BaseEntity;
-import com.frostemanneogard.braive.base.Person;
 import com.frostemanneogard.braive.patients.Patient;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
