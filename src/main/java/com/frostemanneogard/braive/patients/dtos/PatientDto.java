@@ -1,18 +1,26 @@
 package com.frostemanneogard.braive.patients.dtos;
 
+import com.frostemanneogard.braive.organizations.dtos.OrganizationDto;
 import com.frostemanneogard.braive.patients.Patient;
 
 import java.time.LocalDate;
 import java.util.UUID;
 
-public record PatientDto(UUID id, String name, String nationalIdNum, LocalDate dateOfBirth) {
+public record PatientDto(
+        UUID id,
+        String name,
+        String nationalIdNum,
+        LocalDate dateOfBirth,
+        OrganizationDto organization
+) {
 
     public static PatientDto fromEntity(Patient entity) {
         return new PatientDto(
                 entity.getId(),
                 entity.getName(),
                 entity.getNationalIdNum(),
-                entity.getDateOfBirth()
+                entity.getDateOfBirth(),
+                OrganizationDto.fromEntity(entity.getOrganization())
         );
     }
 
