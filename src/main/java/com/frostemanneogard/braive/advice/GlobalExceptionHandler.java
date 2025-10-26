@@ -18,9 +18,11 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<String> handleException(Exception ex) {
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                             .body("An error occurred: " + ex.getMessage());
+    public ResponseEntity<ApiResponse<String>> handleException(Exception e) {
+        return ApiResponseEntity.error(
+                HttpStatus.INTERNAL_SERVER_ERROR,
+                "An unknown error occurred. Please try again later"
+        );
     }
 
 }
