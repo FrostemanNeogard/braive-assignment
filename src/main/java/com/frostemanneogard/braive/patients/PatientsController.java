@@ -33,5 +33,4 @@ public class PatientsController extends BaseApiController {
         return ApiResponseEntity.ok(patients.stream().map(PatientDto::fromEntity).toList());
     }
 
-
 }
