@@ -27,10 +27,10 @@ public class PsychologistsController extends BaseApiController {
     }
 
     @GetMapping
-    private ResponseEntity<ApiResponse<List<PsychologistDto>>> getAllPatients() {
-        List<Psychologist> patients = this.psychologistsService.getAllPsychologists();
+    private ResponseEntity<ApiResponse<List<PsychologistDto>>> getAllPsychologists() {
+        List<Psychologist> psychologists = this.psychologistsService.getAllPsychologists();
 
-        return ApiResponseEntity.ok(patients.stream().map(PsychologistDto::fromEntity).toList());
+        return ApiResponseEntity.ok(psychologists.stream().map(PsychologistDto::fromEntity).toList());
     }
 
 }
