@@ -13,11 +13,11 @@ import java.util.Set;
 @Getter
 public class Psychologist extends Person {
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "organization_id")
     private Organization organization;
 
-    @OneToMany(mappedBy = "psychologist")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "psychologist")
     private Set<Patient> patients;
 
 }

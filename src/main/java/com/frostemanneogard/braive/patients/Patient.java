@@ -11,7 +11,7 @@ import lombok.Getter;
 @Getter
 public class Patient extends Person {
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "organization_id")
     private Organization organization;
 
