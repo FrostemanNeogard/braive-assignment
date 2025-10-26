@@ -11,8 +11,7 @@ public record PatientDto(
         String name,
         String nationalIdNum,
         LocalDate dateOfBirth,
-        OrganizationDto organization
-) {
+        OrganizationDto organization) {
 
     public static PatientDto fromEntity(Patient entity) {
         return new PatientDto(
