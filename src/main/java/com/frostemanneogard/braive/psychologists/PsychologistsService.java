@@ -15,4 +15,8 @@ public class PsychologistsService {
         return this.psychologistsRepository.findAll();
     }
 
+    public List<Psychologist> getPsychologistsOrderedByWorkload() {
+        return this.psychologistsRepository.findWorkloadOrderedAscending();
+    }
+
 }
