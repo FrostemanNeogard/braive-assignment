@@ -17,12 +17,4 @@ public class GlobalExceptionHandler {
         return ApiResponseEntity.error(HttpStatus.NOT_FOUND, e.getMessage());
     }
 
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<ApiResponse<String>> handleException(Exception e) {
-        return ApiResponseEntity.error(
-                HttpStatus.INTERNAL_SERVER_ERROR,
-                "An unknown error occurred. Please try again later"
-        );
-    }
-
 }
