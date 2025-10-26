@@ -2,6 +2,7 @@ package com.frostemanneogard.braive.organizations;
 
 import com.frostemanneogard.braive.base.BaseEntity;
 import com.frostemanneogard.braive.patients.Patient;
+import com.frostemanneogard.braive.psychologists.Psychologist;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
@@ -20,5 +21,8 @@ public class Organization extends BaseEntity {
 
     @OneToMany(mappedBy = "organization")
     private Set<Patient> patients;
+
+    @OneToMany(mappedBy = "organization")
+    private Set<Psychologist> psychologists;
 
 }
