@@ -9,7 +9,7 @@ import java.util.UUID;
 public interface PsychologistsRepository extends ListCrudRepository<Psychologist, UUID> {
 
     @Query("""
-        SELECT p 
+        SELECT p
         FROM Psychologist p
         LEFT JOIN p.patients pat
         GROUP BY p.id
